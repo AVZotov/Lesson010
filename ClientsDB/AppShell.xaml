@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="ClientsDB.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:loginpage="clr-namespace:ClientsDB.Pages.LoginPage"
+    xmlns:mainpage="clr-namespace:ClientsDB.Pages.MainPage"
+    Shell.FlyoutBehavior="Disabled">
+
+    <ShellContent
+        Title="LoginPage"
+        ContentTemplate="{DataTemplate loginpage:LoginPage}"
+        Route="LoginPage" />
+    
+    <ShellContent
+        Title="MainPage"
+        ContentTemplate="{DataTemplate mainpage:MainPage}"
+        Route="MainPage" />
+
+</Shell>
