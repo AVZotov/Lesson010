@@ -4,20 +4,25 @@
              x:Class="ClientsDB.Pages.LoginPage.LoginPage"
              xmlns:viewmodel="clr-namespace:ClientsDB.Pages.LoginPage"
              x:DataType="viewmodel:LoginPageViewModel"
-             Title="LoginPage">
+             Title="LoginPage"
+             Shell.NavBarIsVisible="False">
 
     <Frame HasShadow="True" 
            BorderColor="BlanchedAlmond"
-           Margin="1"
            Background="#333333"
+           Margin="1"
            CornerRadius="5">
 
         <Border StrokeThickness="4"
-                StrokeShape="RoundRectangle 20, 20, 20, 20"
-                Padding="20"
+                StrokeShape="RoundRectangle 10, 10, 10, 10"
+                Padding="100, 50"
                 HorizontalOptions="Center"
                 VerticalOptions="Center">
-            
+            <Border.Shadow>
+                <Shadow Brush="LightGray"
+                        Offset="2, 2"
+                        Opacity="0.2"/>
+            </Border.Shadow>
             <Border.Stroke>
                 <LinearGradientBrush EndPoint="0, 1">
                     <GradientStop Color="BlanchedAlmond"
@@ -33,11 +38,20 @@
                        HorizontalOptions="Center"
                        VerticalOptions="Center"
                        TextColor="BlanchedAlmond"
-                       CharacterSpacing="5"/>
+                       CharacterSpacing="5"
+                       TextDecorations="Underline"/>
 
-                <RadioButton Content="Login as consultant" IsChecked="{Binding IsConsultant}"/>
-                <RadioButton Content="Login as manager" IsChecked="{Binding IsManager}"
-                         Margin="0, 5, 0, 0"/>
+                <VerticalStackLayout Margin="0, 30, 0, 20">
+                    <RadioButton Content="Login as consultant" 
+                                 IsChecked="{Binding IsConsultant}"
+                                 TextColor="BlanchedAlmond" 
+                                 SemanticProperties.HeadingLevel="Level2"/>
+                    
+                    <RadioButton Content="Login as manager" 
+                                 IsChecked="{Binding IsManager}"
+                                 TextColor="BlanchedAlmond" 
+                                 SemanticProperties.HeadingLevel="Level2"/>
+                </VerticalStackLayout>
                 <Button Text="LogIn" Command="{Binding LoginCommand}"/>
             </VerticalStackLayout>
         </Border>
