@@ -4,12 +4,46 @@
              x:Class="ClientsDB.Pages.MainPage.MainPage"
              xmlns:viewmodel="clr-namespace:ClientsDB.Pages.MainPage"
              x:DataType="viewmodel:MainPageViewModel"
-             Title="{Binding WorkerType, StringFormat='You are logged in as: {0:F2}'}">
+             Title="{Binding WorkerType, StringFormat='You are logged in as: {0:F2}'}"
+             Background="#333333">
     
-    <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>
+    <Border Stroke="Black"
+            StrokeShape="RoundRectangle 10, 10, 10, 10"
+            StrokeThickness="2"
+            Margin="4">
+        
+        <Grid RowDefinitions="auto, *, auto"
+              ColumnDefinitions="*, 2*">
+            
+            <Border Grid.Column="0"
+                    Grid.ColumnSpan="2"
+                    Grid.Row="0"
+                    Stroke="Black"
+                    StrokeShape="RoundRectangle 10, 10, 10, 10"
+                    StrokeThickness="2">
+
+                <HorizontalStackLayout VerticalOptions="Center">
+                    
+                    <Image Source="dotnet_bot.png" HeightRequest="60"
+                           Margin="20"/>
+                    
+                    <Label Text="Lesson 10 - simple data base"
+                       TextTransform="Uppercase"
+                       SemanticProperties.HeadingLevel="Level1"
+                       CharacterSpacing="10"
+                       TextColor="#FFFFFF"
+                       TextType="Text"
+                       FontAttributes="Bold"
+                       FontSize="36"
+                       Padding="20"
+                       HorizontalTextAlignment="Center"
+                       VerticalTextAlignment="Center"
+                       HorizontalOptions="Center"
+                       VerticalOptions="Center"/>
+                </HorizontalStackLayout>
+            </Border>
+            
+        </Grid>
+        
+    </Border>
 </ContentPage>
